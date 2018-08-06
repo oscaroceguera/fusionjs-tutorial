@@ -23,16 +23,40 @@ Además de estas areas centrales, el equipo de fusion.js proporciona varios plug
 
 ### Comparación con algunos frameworks y librerias populares
 
-**REACT**
+**React**
 
-Es una popular y madura libreria desarrollada por facebook para implementacion de UIs basadas en componentes. Fusion.js puede ser usada 
-.
-.
-.
-.
-.
-.
-.
+Es una popular y madura libreria desarrollada por facebook para implementacion de UIs basadas en componentes. Fusion.js puede ser usado sin problemas con react: JSX, ES2017, hot module reloading, server-side rendering, etc.
+Ademas, el core de fusion.js es independiente de la capa de vizualización y también se puede usar con diferentes blibiotecas de vistas.
+
+A través de plugins, fusion.js ofrece varias caracteristicas adicionales demás de vanilla React: proporciona una forma sencilla de dividir código, admite una representaciñon asincrónica del lado del servidor, permite que los plugins instalen automaticamente los providers cuando sea necesario, etc.
+
+**Create-rect-app**
+
+Es un CLIs que andamia un projecto React, ademas de configurar webpack, babel, Eslint, Jest, etc, hay algunas cosas que no admite de inmediato (sobre todo, server rendering y hot reloading de componentes), pero proporciona capacidad de realizar `eject`, por lo que se puede usar como un generador repetitivo y personalizar el flujo de trabajo de compilacion desde allí.
+
+Fusion.js es similar a create-react-app en el sentido que proporciona una configuracion de webpack/babel, pero ademas de esto, proporciona herramientas de alto nivel como server-side rendering, code splittion mas potente y hot reloading totalmente integrada. Fusion.js tambien proporciona una API de servidor HTTP moderna (a través de Koa) y un entorno de código universal.
+
+Debido a que fusion.js proporciona la cartera de compilacion, asi como los entornos de servidor y navegador, tiene potencial de aplicar automaticamente varias optimizaciones que de otro modo tendrian que realizarse manualmente para cada compilación.
+
+**Express**
+
+Express es el framework HTTP server mas popular de Node.js. Si bien es independiente del procesamiento de blibliotecas (siendo compatible con blibliotecas como pug o handlebars), generalmente no estan trival integrar las herramientas modernas de React (e.g. HMR) a menos que adopte un marco mas dogmatico sobre Express.
+
+Tanto Express como Fusion.js se pueden usar como un servidor Node.js y ambos pueden compilar a traves de middlewares. La principal diferencia es que fusion.js usa middlewares de koa.js. koa utiliza una arquitectura de middleware basado en async/await más moderna, que proporciona una mejor experiencia de trace/debuggin del stack y es mas facil probar.
+
+**Next.js**
+
+Next.js es un framework desasrrolado por Zeit.con diseñado para construir aplicaciones server-rendered con react.
+
+La principal diferecnia es que Next.js se enfoca sobre el desarrollo de react y no proporciona recursos para desarrollar backend completo, mientras que Fusion.js es un framework full-stack, que soporta el desarrollo de back.end a través del middleware Koa y complementos para herramientas como GraphQL. Además, Fusion.js proporciona instalaciones como inyección de dependencias y tipado estatico para mejorar la capacidad de mantenimiento de proyectos complejos.
+
+Tanto como Next.js y Fusion.js pueden usarse con una variedad de librerias de terceros, pero con el objetivo de evitar la paralisis del ananlisis, el equipo de fusion tambien proporciona un conjunto de complementos seleccionados que consideramos importantes para las aplicaciones de calidad de produccion y que se puede integrar en una aplicacion base de una manera que es eficiente y libre de patrones.
+
+**Electrode.io**
+
+Es un framework desarrollado por wallmart labs diseñado para construir aplicaciones server-rendered con react. Esto es muy similar en el scope de fusion.js
+
+En un lugar proporciona un ñunico andamio monolítico, la arquitectura fusion.js encapsula integraciones complejas por biblioteca, lo que permite que los andamios sean tan simples o tan complejos como sea necesario. Por ejemplo, la instalacion de soporte para CSS atómico toma una sola lína de código, y las diferencias estrategias de diseño pueden empaqutarse y compartirse facilmente entre proyectos.
 
 ## Hello world
 
